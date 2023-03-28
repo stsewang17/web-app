@@ -8,4 +8,4 @@ steps:
 # Push docker image to Artifact registry
 - name: gcr.io/cloud-builders/docker
 - args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
-- id: build docker image
+- id: push docker image to artifact registry
