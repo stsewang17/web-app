@@ -1,0 +1,11 @@
+steps:
+# Build docker image
+- name: gcr.io/cloud-builders/docker
+- args: ['build','-t','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest','app-build/.']
+- id: build docker image
+
+
+# Push docker image to Artifact registry
+- name: gcr.io/cloud-builders/docker
+- args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
+- id: build docker image
