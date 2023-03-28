@@ -30,7 +30,7 @@ steps:
           cd env-build
           terraform plan || exit 1
 # Terraform Apply
-  - id: terraform plan
+  - id: terraform apply
     name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
     args:
