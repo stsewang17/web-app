@@ -3,14 +3,10 @@ steps:
   - id: build docker image
     name: gcr.io/cloud-builders/docker
     args: ['build','-t','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest','app-build/.']
-    waitFor:
-      - ['-']
 # Push docker image to Artifact registry
   - id: push docker image
     name: gcr.io/cloud-builders/docker
     args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
-    waitFor:
-      - ['build docker image']
 # Terraform init
   - id: terraform init
     name: 'hashicorp/terraform:latest'
@@ -22,8 +18,6 @@ steps:
           echo "*************** TERRAFORM INIT ******************"
           cd env-build
           terraform init || exit 1
-    waitFor:
-      - ['push docker image']
 # Terraform Plan
   - id: terraform plan
     name: 'hashicorp/terraform:latest'
@@ -35,8 +29,6 @@ steps:
           echo "*************** TERRAFORM PLAN ******************"
           cd env-build
           terraform plan || exit 1
-    waitFor:
-      - ['terraform init']
 # Terraform Apply
   - id: terraform plan
     name: 'hashicorp/terraform:latest'
@@ -48,5 +40,3 @@ steps:
           echo "*************** TERRAFORM APPLY ******************"
           cd env-build
           terraform apply -auto-approve
-    waitFor:
-      - ['terraform plan']
