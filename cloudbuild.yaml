@@ -12,12 +12,9 @@ steps:
     name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
     args:
-      - '-c'
-      -   echo ""
-          echo "*************** TERRAFORM INIT ******************"
-          cd env-build
-          terraform -version
-          terraform init || exit 1
+      - cd env-build
+        terraform -version
+        terraform init || exit 1
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
