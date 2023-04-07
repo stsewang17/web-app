@@ -1,20 +1,18 @@
 steps:
-# Build docker images
-  - id: build docker image
-    name: gcr.io/cloud-builders/docker
-    args: ['build','-t','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest','app-build/.']
-# Push docker image to Artifact registry
-  - id: push docker image
-    name: gcr.io/cloud-builders/docker
-    args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
+# # Build docker images
+#   - id: build docker image
+#     name: gcr.io/cloud-builders/docker
+#     args: ['build','-t','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest','app-build/.']
+# # Push docker image to Artifact registry
+#   - id: push docker image
+#     name: gcr.io/cloud-builders/docker
+#     args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
 # Terraform init
   - id: terraform init
     name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
     args:
-      - cd env-build
-        terraform -version
-        terraform init || exit 1
+      - ls
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
