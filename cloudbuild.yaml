@@ -7,36 +7,36 @@ steps:
   - id: push docker image
     name: gcr.io/cloud-builders/docker
     args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
-# Terraform init
-  - id: terraform init
-    name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-          echo ""
-          echo "*************** TERRAFORM INIT ******************"
-          cd env-build
-          terraform init || exit 1
-# Terraform Plan
-  - id: terraform plan
-    name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-          echo ""
-          echo "*************** TERRAFORM PLAN ******************"
-          cd env-build
-          terraform plan || exit 1
-# Terraform Apply
-  - id: terraform apply
-    name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-          echo ""
-          echo "*************** TERRAFORM APPLY ******************"
-          cd env-build
-          terraform apply -auto-approve
+# # Terraform init
+#   - id: terraform init
+#     name: 'hashicorp/terraform:latest'
+#     entrypoint: 'sh'
+#     args:
+#       - '-c'
+#       - |
+#           echo ""
+#           echo "*************** TERRAFORM INIT ******************"
+#           cd env-build
+#           terraform init || exit 1
+# # Terraform Plan
+#   - id: terraform plan
+#     name: 'hashicorp/terraform:latest'
+#     entrypoint: 'sh'
+#     args:
+#       - '-c'
+#       - |
+#           echo ""
+#           echo "*************** TERRAFORM PLAN ******************"
+#           cd env-build
+#           terraform plan || exit 1
+# # Terraform Apply
+#   - id: terraform apply
+#     name: 'hashicorp/terraform:latest'
+#     entrypoint: 'sh'
+#     args:
+#       - '-c'
+#       - |
+#           echo ""
+#           echo "*************** TERRAFORM APPLY ******************"
+#           cd env-build
+#           terraform apply -auto-approve
