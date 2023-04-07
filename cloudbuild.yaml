@@ -16,6 +16,7 @@ steps:
       -   echo ""
           echo "*************** TERRAFORM INIT ******************"
           cd env-build
+          terraform -version
           terraform init || exit 1
 # # Terraform Plan
 #   - id: terraform plan
