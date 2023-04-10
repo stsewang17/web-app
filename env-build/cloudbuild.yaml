@@ -7,16 +7,16 @@ steps:
   - id: push docker image
     name: gcr.io/cloud-builders/docker
     args: ['push','us-central1-docker.pkg.dev/ageless-rig-375816/sopa-repository/test1:latest']
-# # Terraform init
-#   - id: terraform init
-#     name: 'hashicorp/terraform:latest'
-#     entrypoint: 'sh'
-#     args:
-#       - '-c'
-#       - |
-#           echo ""
-#           echo "*************** TERRAFORM INIT ******************"
-#           terraform init
+# Terraform init
+  - id: terraform init
+    name: 'hashicorp/terraform:latest'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+          echo ""
+          echo "*************** TERRAFORM INIT ******************"
+          terraform init
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
