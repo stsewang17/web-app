@@ -14,7 +14,7 @@ steps:
     args:
       - '-c'
       - |
-          dir
+          ls
           
 # # Terraform Plan
 #   - id: terraform plan
