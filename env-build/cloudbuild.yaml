@@ -14,9 +14,10 @@ steps:
     args:
       - '-c'
       - |
-          echo "*************** TERRAFORM LS ******************"
-          ls
-
+          cd env-build
+          echo ""
+          echo "*************** TERRAFORM INIT ******************"
+          terraform init
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
