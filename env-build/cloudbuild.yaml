@@ -14,8 +14,9 @@ steps:
     args:
       - '-c'
       - |
+          echo "*************** TERRAFORM LS ******************"
           ls
-          
+
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
