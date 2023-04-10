@@ -14,9 +14,8 @@ steps:
     args:
       - '-c'
       - |
-          echo ""
-          echo "*************** TERRAFORM INIT ******************"
-          terraform init
+          dir
+          
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
