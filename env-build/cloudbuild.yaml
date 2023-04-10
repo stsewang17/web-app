@@ -12,7 +12,11 @@ steps:
     name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
     args:
-      - dir
+      - '-c'
+      - |
+          echo ""
+          echo "*************** TERRAFORM INIT ******************"
+          terraform init
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
