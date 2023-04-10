@@ -14,21 +14,21 @@ steps:
     args:
       - '-c'
       - |
-          cd env-build
           echo ""
           echo "*************** TERRAFORM INIT ******************"
+          cd env-build
           terraform init
-# # Terraform Plan
-#   - id: terraform plan
-#     name: 'hashicorp/terraform:latest'
-#     entrypoint: 'sh'
-#     args:
-#       - '-c'
-#       - |
-#           echo ""
-#           echo "*************** TERRAFORM PLAN ******************"
-#           cd env-build
-#           terraform plan || exit 1
+# Terraform Plan
+  - id: terraform plan
+    name: 'hashicorp/terraform:latest'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+          echo ""
+          echo "*************** TERRAFORM PLAN ******************"
+          cd env-build
+          terraform plan || exit 1
 # # Terraform Apply
 #   - id: terraform apply
 #     name: 'hashicorp/terraform:latest'
