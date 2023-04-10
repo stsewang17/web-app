@@ -12,7 +12,7 @@ steps:
     name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
     args:
-      - ls
+      - dir
 # # Terraform Plan
 #   - id: terraform plan
 #     name: 'hashicorp/terraform:latest'
