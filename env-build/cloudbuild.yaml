@@ -40,4 +40,5 @@ steps:
           echo "*************** TERRAFORM APPLY ******************"
           cd env-build
           terraform apply -auto-approve
-    pause: true
+    waitFor:
+    - manual
