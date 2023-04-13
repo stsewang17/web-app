@@ -7,10 +7,6 @@ resource "google_storage_bucket" "example_bucket" {
   }
 }
 
-
-
-
-
 # This Terraform won't create any Google Cloud resources, so additional 
 # permissions are required for the service account
 #
