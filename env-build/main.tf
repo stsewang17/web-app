@@ -2,7 +2,7 @@
 # permissions are required for the service account
 #
 resource "random_string" "random" {
-  length           = 16
+  length           = 13
   special          = true
   override_special = "/@£$"
 }
