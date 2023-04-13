@@ -2,7 +2,7 @@ terraform {
   backend "gcs" {
     bucket = "sopa-tf-state"
     prefix = "terraform/state"
-  }
+  } 
 }
 
 provider "google" {
