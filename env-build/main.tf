@@ -1,11 +1,11 @@
-resource "google_storage_bucket" "example_bucket" {
-  name     = "st-example-bucket-123"
-  location = "US"
+# resource "google_storage_bucket" "example_bucket" {
+#   name     = "st-example-bucket-123"
+#   location = "US"
 
-  versioning {
-    enabled = true
-  }
-}
+#   versioning {
+#     enabled = true
+#   }
+# }
 
 # This Terraform won't create any Google Cloud resources, so additional 
 # permissions are required for the service account
