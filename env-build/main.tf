@@ -1,13 +1,4 @@
-# resource "google_storage_bucket" "example_bucket" {
-#   name     = "st-example-bucket-123"
-#   location = "US"
-
-#   versioning {
-#     enabled = true
-#   }
-# }
-
-resource "google_cloud_run_service" "sopa_website" {
+resource "google_cloud_run_service" "default" {
   name     = "sopa-website"
   location = "us-central1"
 
