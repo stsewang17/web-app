@@ -7,6 +7,24 @@
 #   }
 # }
 
+resource "google_cloud_run_service" "sopa_website" {
+  name     = "sopa-website"
+  location = "us-central1"
+
+  template {
+    spec {
+      containers {
+        image = var.image_url
+      }
+    }
+  }
+
+  traffic {
+    percent         = 100
+    latest_revision = true
+  }
+}
+
 # This Terraform won't create any Google Cloud resources, so additional 
 # permissions are required for the service account
 #
